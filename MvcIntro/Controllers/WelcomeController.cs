@@ -6,23 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MvcIntro.Controllers
 {
-    public class HelloController : Controller
+    public class WelcomeController : Controller
     {
-        //public string Name { get; set; }
-        //public string Age { get; set; }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Welcome(string name, int numTimes = 1)
+        public IActionResult Index(string name, int numTimes = 1)
         {
             ////return "Go home";
             //return $"Welcome to {name}, num times: {numTimes}";
 
             ViewData["Message"] = "Hello " + name;
-            ViewData["NumTimes"] = " num times: " + numTimes;
+            ViewData["NumTimes"] = numTimes;
 
             return View();
         }
